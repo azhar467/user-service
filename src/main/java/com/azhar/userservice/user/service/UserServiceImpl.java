@@ -70,11 +70,11 @@ public class UserServiceImpl implements UserService{
         User user = userRepository.findById(id)
                 .orElseThrow(()-> new UserNotFoundException("User not found with id: "+id));
 
-        if (request.userName()!= null){
-            if (request.userName().isBlank()){
+        if (request.name()!= null){
+            if (request.name().isBlank()){
                 throw new IllegalArgumentException("Name cannot be blank");
             }
-            user.setName(request.userName());
+            user.setName(request.name());
         }
 
         if (request.email()!=null){
