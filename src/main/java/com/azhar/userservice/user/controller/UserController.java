@@ -60,8 +60,8 @@ public class UserController {
             @ApiResponse(responseCode = "404", description = "User not found")
     })
     @GetMapping("/{id}")
-    public UserResponse getUser(@PathVariable Long id){
-        return userService.getUser(id);
+    public UserResponse getUserById(@PathVariable Long id){
+        return userService.getUserById(id);
     }
 
     @Operation(
